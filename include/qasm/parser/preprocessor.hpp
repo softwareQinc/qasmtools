@@ -27,7 +27,7 @@
  */
 
 /**
- * \file parser/preprocessor.hpp
+ * \file qasm/parser/preprocessor.hpp
  * \brief Manages includes for openQASM parsing
  */
 

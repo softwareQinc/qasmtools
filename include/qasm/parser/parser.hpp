@@ -27,14 +27,14 @@
  */
 
 /**
- * \file parser/parser.hpp
+ * \file qasm/parser/parser.hpp
  * \brief openQASM parsing
  */
 
 #pragma once
 
 #include "preprocessor.hpp"
-#include "ast/ast.hpp"
+#include "qasm/ast/ast.hpp"
 
 #include <list>
 

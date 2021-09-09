@@ -27,7 +27,7 @@
  */
 
 /**
- * \file parser/token.hpp
+ * \file qasm/parser/token.hpp
  * \brief Tokens
  */
 

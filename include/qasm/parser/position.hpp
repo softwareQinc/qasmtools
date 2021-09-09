@@ -25,7 +25,7 @@
  */
 
 /**
- * \file parser/position.hpp
+ * \file qasm/parser/position.hpp
  */
 
 #pragma once

@@ -25,15 +25,23 @@
  */
 
 /**
- * \file ast/ast.hpp
+ * \file qasm/utils/templates.hpp
+ * \brief Helper templates
  */
 
 #pragma once
 
-#include "ast/visitor.hpp"
-#include "ast/base.hpp"
-#include "ast/expr.hpp"
-#include "ast/stmt.hpp"
-#include "ast/decl.hpp"
-#include "ast/program.hpp"
-#include "ast/semantic.hpp"
+namespace qasm {
+namespace utils {
+/**
+ * \brief Convenience template for variant visitors
+ */
+template <class... Ts>
+struct overloaded : Ts... {
+    using Ts::operator()...;
+};
+template <class... Ts>
+overloaded(Ts...) -> overloaded<Ts...>;
+
+} // namespace utils
+} // namespace qasm

@@ -25,14 +25,14 @@
  */
 
 /**
- * \file ast/expr.hpp
+ * \file qasm/ast/expr.hpp
  * \brief openQASM expressions
  */
 
 #pragma once
 
 #include "base.hpp"
-#include "utils/angle.hpp"
+#include "qasm/utils/angle.hpp"
 
 #include <cmath>
 

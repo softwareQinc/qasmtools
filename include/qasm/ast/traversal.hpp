@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/traversal.hpp
+ * \file qasm/ast/traversal.hpp
  * \brief Node traversal for syntax trees
  */
 

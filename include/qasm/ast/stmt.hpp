@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/stmt.hpp
+ * \file qasm/ast/stmt.hpp
  * \brief openQASM statements
  */
 

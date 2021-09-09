@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/visitor.hpp
+ * \file qasm/ast/visitor.hpp
  * \brief Visitor interface for syntax trees
  */
 

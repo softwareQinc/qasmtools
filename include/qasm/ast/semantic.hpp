@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/semantic.hpp
+ * \file qasm/ast/semantic.hpp
  * \brief Semantic analysis for syntax trees
  */
 

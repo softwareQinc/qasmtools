@@ -27,7 +27,7 @@
  */
 
 /**
- * \file parser/lexer.hpp
+ * \file qasm/parser/lexer.hpp
  * \brief Lexical analysis
  */
 

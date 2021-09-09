@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/var.hpp
+ * \file qasm/ast/var.hpp
  * \brief openQASM variable utilities
  */
 

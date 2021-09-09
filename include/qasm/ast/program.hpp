@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/program.hpp
+ * \file qasm/ast/program.hpp
  * \brief openQASM programs
  */
 

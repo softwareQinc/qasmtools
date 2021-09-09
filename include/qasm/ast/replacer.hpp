@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/replacer.hpp
+ * \file qasm/ast/replacer.hpp
  * \brief Node replacement for syntax trees
  */
 

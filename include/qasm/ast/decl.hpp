@@ -25,7 +25,7 @@
  */
 
 /**
- * \file ast/decl.hpp
+ * \file qasm/ast/decl.hpp
  * \brief openQASM declarations
  */
 

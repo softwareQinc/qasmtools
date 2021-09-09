@@ -25,13 +25,13 @@
  */
 
 /**
- * \file ast/base.hpp
+ * \file qasm/ast/base.hpp
  * \brief openQASM syntax trees
  */
 
 #pragma once
 
-#include "parser/position.hpp"
+#include "qasm/parser/position.hpp"
 #include "visitor.hpp"
 
 #include <memory>
