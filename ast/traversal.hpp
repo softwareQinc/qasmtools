@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -34,13 +34,13 @@
 #include "visitor.hpp"
 #include "program.hpp"
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 /**
- * \class staq::ast::Traverse
+ * \class qasm::ast::Traverse
  * \brief Generic complete traversal of ASTs
- * \see staq::ast::Visitor
+ * \see qasm::ast::Visitor
  *
  * Implements a generic, pass-through traversal of the entire
  * AST. Standard usage is to derive from this class and override only
@@ -107,4 +107,4 @@ class Traverse : public Visitor {
 };
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

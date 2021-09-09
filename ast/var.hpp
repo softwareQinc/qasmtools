@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -36,11 +36,11 @@
 #include <cstddef>
 #include <optional>
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 /**
- * \class staq::ast::VarAccess
+ * \class qasm::ast::VarAccess
  * \brief Class for variable accesses
  *
  * Represents accesses into a register by the register name and an optional
@@ -166,7 +166,7 @@ class VarAccess final : public ASTNode {
 };
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm
 
 namespace std {
 /**
@@ -176,8 +176,8 @@ namespace std {
  * Implementation and magic numbers taken from boost::hash_combine.
  */
 template <>
-struct hash<staq::ast::VarAccess> {
-    std::size_t operator()(const staq::ast::VarAccess& v) const {
+struct hash<qasm::ast::VarAccess> {
+    std::size_t operator()(const qasm::ast::VarAccess& v) const {
         std::size_t lhs = std::hash<std::string>{}(v.var_);
         lhs ^= std::hash<std::optional<int>>{}(v.offset_) + 0x9e3779b9 +
                (lhs << 6) + (lhs >> 2);

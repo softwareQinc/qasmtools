@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -38,11 +38,11 @@
 #include <cctype>
 #include <memory>
 
-namespace staq {
+namespace qasm {
 namespace parser {
 
 /**
- * \class staq::parser::Lexer
+ * \class qasm::parser::Lexer
  * \brief openPARSER lexer class
  *
  * The Lexer reads from (a shared_ptr to) an istream object given during
@@ -376,4 +376,4 @@ class Lexer {
 };
 
 } // namespace parser
-} // namespace staq
+} // namespace qasm

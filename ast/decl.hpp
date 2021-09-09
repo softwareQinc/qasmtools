@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -35,7 +35,7 @@
 
 #include <list>
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 static const std::set<std::string_view> qelib_defs{
@@ -54,7 +54,7 @@ inline bool is_std_qelib(const std::string& id) {
 }
 
 /**
- * \class staq::ast::Decl
+ * \class qasm::ast::Decl
  * \brief Base class for openQASM declarations
  *
  * Declarations are attribute classes as they can occur in different
@@ -78,10 +78,10 @@ class Decl {
 };
 
 /**
- * \class staq::ast::GateDecl
+ * \class qasm::ast::GateDecl
  * \brief Class for gate declarations
- * \see staq::ast::Stmt
- * \see staq::ast::Decl
+ * \see qasm::ast::Stmt
+ * \see qasm::ast::Decl
  */
 class GateDecl final : public Stmt, public Decl {
     bool opaque_;                  ///< whether the declaration is opaque
@@ -208,9 +208,9 @@ class GateDecl final : public Stmt, public Decl {
 };
 
 /**
- * \class staq::ast::OracleDecl
+ * \class qasm::ast::OracleDecl
  * \brief Class for oracle declarations
- * \see staq::ast::Decl
+ * \see qasm::ast::Decl
  */
 class OracleDecl final : public Stmt, public Decl {
     std::vector<symbol> params_; ///< quantum parameters
@@ -266,9 +266,9 @@ class OracleDecl final : public Stmt, public Decl {
 };
 
 /**
- * \class staq::ast::RegisterDecl
+ * \class qasm::ast::RegisterDecl
  * \brief Class for register declarations
- * \see staq::ast::Decl
+ * \see qasm::ast::Decl
  */
 class RegisterDecl final : public Stmt, public Decl {
     bool quantum_; ///< whether the register is quantum
@@ -319,9 +319,9 @@ class RegisterDecl final : public Stmt, public Decl {
 };
 
 /**
- * \class staq::ast::AncillaDecl
+ * \class qasm::ast::AncillaDecl
  * \brief Class for local register declarations
- * \see staq::ast::Decl
+ * \see qasm::ast::Decl
  */
 class AncillaDecl final : public Gate, public Decl {
     bool dirty_; ///< whether the register can be dirty
@@ -374,4 +374,4 @@ class AncillaDecl final : public Gate, public Decl {
 };
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

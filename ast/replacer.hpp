@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -34,12 +34,12 @@
 #include "visitor.hpp"
 #include "program.hpp"
 
-namespace staq {
+namespace qasm {
 namespace ast {
 /**
- * \class staq::ast::Replacer
+ * \class qasm::ast::Replacer
  * \brief Generic complete traversal with post-order node replacement
- * \see staq::ast::Visitor
+ * \see qasm::ast::Visitor
  *
  * The replacer provides a visitor-style interface where the visitor
  * of a node optionally returns a node of the same base type (in the
@@ -324,12 +324,12 @@ class Replacer : public Visitor {
 };
 
 /**
- * \class staq::ast::GateReplacer
+ * \class qasm::ast::GateReplacer
  * \brief Bulk gate replacement
- * \see staq::ast::Replacer
+ * \see qasm::ast::Replacer
  *
  * Implements bulk replacement of gates given by a hash map. Use the
- * functional interface staq::ast::replace_gates rather than
+ * functional interface qasm::ast::replace_gates rather than
  * the class.
  */
 class GateReplacer final : public Replacer {
@@ -382,4 +382,4 @@ replace_gates(ASTNode& node,
 }
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

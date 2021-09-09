@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -39,7 +39,7 @@
 #include <sstream>
 #include <vector>
 
-namespace staq {
+namespace qasm {
 namespace parser {
 
 /**
@@ -77,9 +77,9 @@ static const std::string std_include =
     "u3(-theta/2,0,-(phi+lambda)/2) t;  cx c,t;  u3(theta/2,phi,0) t;}\n";
 
 /**
- * \class staq::parser::Preprocessor
+ * \class qasm::parser::Preprocessor
  * \brief openQASM preprocessor class
- * \see staq::parser::Lexer
+ * \see qasm::parser::Lexer
  *
  * The preprocessor acts as a wrapper around the lexer, providing a token stream
  * that matches the stream produced by explicitly inserting included code.
@@ -222,4 +222,4 @@ class Preprocessor {
 };
 
 } // namespace parser
-} // namespace staq
+} // namespace qasm

@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -39,11 +39,11 @@
 #include <set>
 #include <unordered_map>
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 /**
- * \class staq::ast::SemanticError
+ * \class qasm::ast::SemanticError
  * \brief Exception class for semantic errors
  */
 class SemanticError : public std::exception {
@@ -54,13 +54,13 @@ class SemanticError : public std::exception {
 };
 
 /**
- * \class staq::ast::BitType
+ * \class qasm::ast::BitType
  * \brief Enum for types of bits
  */
 enum class BitType { Cbit, Qubit };
 
 /**
- * \struct staq::ast::GateType
+ * \struct qasm::ast::GateType
  * \brief Data struct for gate types
  */
 struct GateType {
@@ -69,7 +69,7 @@ struct GateType {
 };
 
 /**
- * \struct staq::ast::RegisterType
+ * \struct qasm::ast::RegisterType
  * \brief Data struct for register types
  */
 struct RegisterType {
@@ -78,7 +78,7 @@ struct RegisterType {
 };
 
 /**
- * \struct staq::ast::RealType
+ * \struct qasm::ast::RealType
  * \brief Empty structure denoting a real type
  */
 struct RealType {};
@@ -92,13 +92,13 @@ struct RealType {};
 using Type = std::variant<BitType, GateType, RegisterType, RealType>;
 
 /**
- * \class staq::ast::SemanticChecker
+ * \class qasm::ast::SemanticChecker
  * \brief Implementation of the semantic analysis compiler phase
- * \see staq::ast::Visitor
+ * \see qasm::ast::Visitor
  *
  * Checks for anything that could cause a run-time error -- notably,
  * type errors, invalid uniform gates, etc. Use the functional
- * interface staq::ast::check_source instead.
+ * interface qasm::ast::check_source instead.
  */
 class SemanticChecker final : public Visitor {
   public:
@@ -476,4 +476,4 @@ inline void check_source(Program& prog) {
 }
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

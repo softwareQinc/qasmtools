@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -31,7 +31,7 @@
 
 #pragma once
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 /* Forward declarations */
@@ -56,7 +56,7 @@ class AncillaDecl;
 class Program;
 
 /**
- * \class staq::ast::Visitor
+ * \class qasm::ast::Visitor
  * \brief Base visitor interface
  *
  * Classic visitor via (virtual) double dispatch. Standard usage is to
@@ -66,7 +66,7 @@ class Program;
  * Traversal to sub-nodes is handled by the particular visitor, not the
  * node class. For a visitor that automatically handles traversal and also
  * allows picking and choosing the particular visit overloads, see
- * staq::ast::Traverse.
+ * qasm::ast::Traverse.
  */
 class Visitor {
   public:
@@ -98,4 +98,4 @@ class Visitor {
 };
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

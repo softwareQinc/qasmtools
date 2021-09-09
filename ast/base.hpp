@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -37,7 +37,7 @@
 #include <memory>
 #include <set>
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 template <typename T>
@@ -46,7 +46,7 @@ using ptr = std::unique_ptr<T>;
 using symbol = std::string;
 
 /**
- * \class staq::ast::ASTNode
+ * \class qasm::ast::ASTNode
  * \brief Base class for AST nodes
  */
 class ASTNode {
@@ -108,4 +108,4 @@ class ASTNode {
 };
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

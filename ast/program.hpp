@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -33,11 +33,11 @@
 
 #include "decl.hpp"
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 /**
- * \class staq::ast::Program
+ * \class qasm::ast::Program
  * \brief Program class
  */
 class Program : public ASTNode {
@@ -116,4 +116,4 @@ class Program : public ASTNode {
 };
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

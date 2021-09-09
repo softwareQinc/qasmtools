@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -38,11 +38,11 @@
 
 #include <list>
 
-namespace staq {
+namespace qasm {
 namespace parser {
 
 /**
- * \class staq::parser::ParseError
+ * \class qasm::parser::ParseError
  * \brief Exception class for parse errors
  */
 class ParseError : public std::exception {
@@ -53,9 +53,9 @@ class ParseError : public std::exception {
 };
 
 /**
- * \class staq::parser::Parser
+ * \class qasm::parser::Parser
  * \brief openQASM parser class
- * \see staq::parser::Preprocessor
+ * \see qasm::parser::Preprocessor
  */
 class Parser {
     Preprocessor& pp_lexer_; ///< preprocessed, tokenized input stream
@@ -1036,4 +1036,4 @@ inline ast::ptr<ast::Program> parse_string(const std::string& str,
 }
 
 } // namespace parser
-} // namespace staq
+} // namespace qasm

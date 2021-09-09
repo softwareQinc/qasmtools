@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -38,11 +38,11 @@
 #include <functional>
 #include <vector>
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 /**
- * \class staq::ast::Stmt
+ * \class qasm::ast::Stmt
  * \brief Base class for openQASM statements
  */
 class Stmt : public ASTNode {
@@ -66,9 +66,9 @@ class Stmt : public ASTNode {
 };
 
 /**
- * \class staq::ast::MeasureStmt
+ * \class qasm::ast::MeasureStmt
  * \brief Class for measurement statements
- * \see staq::ast::Stmt
+ * \see qasm::ast::Stmt
  */
 class MeasureStmt final : public Stmt {
     VarAccess q_arg_; ///< the quantum bit|register
@@ -133,9 +133,9 @@ class MeasureStmt final : public Stmt {
 };
 
 /**
- * \class staq::ast::ResetStmt
+ * \class qasm::ast::ResetStmt
  * \brief Class for reset statements
- * \see staq::ast::Stmt
+ * \see qasm::ast::Stmt
  */
 class ResetStmt final : public Stmt {
     VarAccess arg_; ///< the qbit|qreg
@@ -182,9 +182,9 @@ class ResetStmt final : public Stmt {
 };
 
 /**
- * \class staq::ast::IfStmt
+ * \class qasm::ast::IfStmt
  * \brief Class for if statements
- * \see staq::ast::Stmt
+ * \see qasm::ast::Stmt
  */
 class IfStmt final : public Stmt {
     symbol var_;     ///< classical register name
@@ -250,7 +250,7 @@ class IfStmt final : public Stmt {
 };
 
 /**
- * \class staq::ast::Gate
+ * \class qasm::ast::Gate
  * \brief Statement sub-class for gate
  */
 class Gate : public Stmt {
@@ -261,9 +261,9 @@ class Gate : public Stmt {
 };
 
 /**
- * \class staq::ast::UGate
+ * \class qasm::ast::UGate
  * \brief Class for U gates
- * \see staq::ast::Gate
+ * \see qasm::ast::Gate
  */
 class UGate final : public Gate {
     ptr<Expr> theta_;  ///< theta angle
@@ -366,9 +366,9 @@ class UGate final : public Gate {
 };
 
 /**
- * \class staq::ast::CNOTGate
+ * \class qasm::ast::CNOTGate
  * \brief Class for CX gates
- * \see staq::ast::Gate
+ * \see qasm::ast::Gate
  */
 class CNOTGate final : public Gate {
     VarAccess ctrl_; ///< control qubit|qreg
@@ -432,9 +432,9 @@ class CNOTGate final : public Gate {
 };
 
 /**
- * \class staq::ast::BarrierGate
+ * \class qasm::ast::BarrierGate
  * \brief Class for barrier gates
- * \see staq::ast::Gate
+ * \see qasm::ast::Gate
  */
 class BarrierGate final : public Gate {
     std::vector<VarAccess> args_; ///< list of quantum bits|registers
@@ -512,9 +512,9 @@ class BarrierGate final : public Gate {
 };
 
 /**
- * \class staq::ast::DeclaredGate
+ * \class qasm::ast::DeclaredGate
  * \brief Class for declared gate applications
- * \see staq::ast::Gate
+ * \see qasm::ast::Gate
  */
 class DeclaredGate final : public Gate {
     symbol name_;                   ///< gate identifier
@@ -655,4 +655,4 @@ class DeclaredGate final : public Gate {
 };
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

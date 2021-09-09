@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -36,7 +36,7 @@
 
 #include <cmath>
 
-namespace staq {
+namespace qasm {
 namespace ast {
 
 /**
@@ -96,7 +96,7 @@ inline std::ostream& operator<<(std::ostream& os, const UnaryOp& uop) {
 }
 
 /**
- * \class staq::ast::Expr
+ * \class qasm::ast::Expr
  * \brief Base class for openQASM expressions
  */
 class Expr : public ASTNode {
@@ -127,9 +127,9 @@ class Expr : public ASTNode {
 };
 
 /**
- * \class staq::ast::BExpr
+ * \class qasm::ast::BExpr
  * \brief Class for binary operator expressions
- * \see staq::ast::Expr
+ * \see qasm::ast::Expr
  */
 class BExpr final : public Expr {
     ptr<Expr> lexp_; ///< the left sub-expression
@@ -237,9 +237,9 @@ class BExpr final : public Expr {
 };
 
 /**
- * \class staq::ast::UExpr
+ * \class qasm::ast::UExpr
  * \brief Class for unary operator expressions
- * \see staq::ast::Expr
+ * \see qasm::ast::Expr
  */
 class UExpr final : public Expr {
     UnaryOp op_;    ///< the unary operator
@@ -330,9 +330,9 @@ class UExpr final : public Expr {
 };
 
 /**
- * \class staq::ast::PiExpr
+ * \class qasm::ast::PiExpr
  * \brief Class for pi constants
- * \see staq::ast::Expr
+ * \see qasm::ast::Expr
  */
 class PiExpr final : public Expr {
 
@@ -363,9 +363,9 @@ class PiExpr final : public Expr {
 };
 
 /**
- * \class staq::ast::IntExpr
+ * \class qasm::ast::IntExpr
  * \brief Class for integer literal expressions
- * \see staq::ast::Expr
+ * \see qasm::ast::Expr
  */
 class IntExpr final : public Expr {
     int value_; ///< the integer value
@@ -407,9 +407,9 @@ class IntExpr final : public Expr {
 };
 
 /**
- * \class staq::ast::RealExpr
+ * \class qasm::ast::RealExpr
  * \brief Class for floating point literal expressions
- * \see staq::ast::Expr
+ * \see qasm::ast::Expr
  */
 class RealExpr final : public Expr {
     double value_; ///< the floating point value
@@ -449,9 +449,9 @@ class RealExpr final : public Expr {
 };
 
 /**
- * \class staq::ast::VarExpr
+ * \class qasm::ast::VarExpr
  * \brief Class for variable expressions
- * \see staq::ast::Expr
+ * \see qasm::ast::Expr
  */
 class VarExpr final : public Expr {
     symbol var_; ///< the identifier
@@ -526,4 +526,4 @@ inline ptr<Expr> angle_to_expr(const utils::Angle& theta) {
 }
 
 } // namespace ast
-} // namespace staq
+} // namespace qasm

@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -38,13 +38,13 @@
 #include <unordered_map>
 #include <variant>
 
-namespace staq {
+namespace qasm {
 namespace parser {
 
 /**
- * \class staq::parser::Token
+ * \class qasm::parser::Token
  * \brief openQASM token class
- * \see staq::parser::Lexer
+ * \see qasm::parser::Lexer
  */
 class Token {
   public:
@@ -104,7 +104,7 @@ class Token {
      * \brief Extraction operator overload
      *
      * \param os Output stream passed by reference
-     * \param k staq::parser::Kind enum class
+     * \param k qasm::parser::Kind enum class
      * \return Reference to the output stream
      */
     friend std::ostream& operator<<(std::ostream& os, const Kind& k) {
@@ -386,4 +386,4 @@ static const std::unordered_map<std::string, Token::Kind> keywords{
     {"ancilla", Token::Kind::kw_ancilla}};
 
 } // namespace parser
-} // namespace staq
+} // namespace qasm

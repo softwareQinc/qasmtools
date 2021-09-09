@@ -1,5 +1,5 @@
 /*
- * This file is part of staq.
+ * This file is part of openQASM_parser.
  *
  * Copyright (c) 2019 - 2021 softwareQ Inc. All rights reserved.
  *
@@ -33,11 +33,11 @@
 #include <iostream>
 #include <string>
 
-namespace staq {
+namespace qasm {
 namespace parser {
 
 /**
- * \class staq::parser::Position
+ * \class qasm::parser::Position
  * \brief Positions in source code
  */
 class Position {
@@ -73,7 +73,7 @@ class Position {
      * \brief Extraction operator overload
      *
      * \param os Output stream
-     * \param pos staq::parser::Position
+     * \param pos qasm::parser::Position
      * \return Reference to the output stream
      */
     friend std::ostream& operator<<(std::ostream& os, const Position& pos) {
@@ -123,4 +123,4 @@ class Position {
 };
 
 } // namespace parser
-} // namespace staq
+} // namespace qasm
