@@ -43,6 +43,8 @@ namespace ast {
 class Program : public ASTNode {
     bool std_include_;          ///< whether the program includes qelib1
     std::list<ptr<Stmt>> body_; ///< the body of the program
+    int bits_ = 0;                ///< number of bits
+    int qubits_ = 0;              ///< number of qubits
 
   public:
     /**
@@ -51,16 +53,22 @@ class Program : public ASTNode {
      * \param pos The source position
      * \param std_include Whether the standard library has been included
      * \param body The program body
+     * \param bits The number of bits
+     * \param qubits The number of qubits
      */
-    Program(parser::Position pos, bool std_include, std::list<ptr<Stmt>>&& body)
-        : ASTNode(pos), std_include_(std_include), body_(std::move(body)) {}
+    Program(parser::Position pos, bool std_include, std::list<ptr<Stmt>>&& body,
+            int bits, int qubits)
+        : ASTNode(pos), std_include_(std_include), body_(std::move(body)),
+          bits_(bits), qubits_(qubits) {}
 
     /**
      * \brief Protected heap-allocated construction
      */
     static ptr<Program> create(parser::Position pos, bool std_include,
-                               std::list<ptr<Stmt>>&& body) {
-        return std::make_unique<Program>(pos, std_include, std::move(body));
+                               std::list<ptr<Stmt>>&& body,
+                               int bits, int qubits) {
+        return std::make_unique<Program>(pos, std_include, std::move(body),
+                                         bits, qubits);
     }
 
     /**
@@ -69,6 +77,20 @@ class Program : public ASTNode {
      * \return Reference to the body as a list of statements
      */
     std::list<ptr<Stmt>>& body() { return body_; }
+
+    /**
+     * \brief Get the number of bits
+     *
+     * \return The number of bits
+     */
+    int bits() { return bits_; }
+
+    /**
+     * \brief Get the number of qubits
+     *
+     * \return The number of qubits
+     */
+    int qubits() { return qubits_; }
 
     /**
      * \brief Apply a function to each statement in order
@@ -111,7 +133,7 @@ class Program : public ASTNode {
         for (auto it = body_.begin(); it != body_.end(); it++) {
             tmp.emplace_back(ptr<Stmt>((*it)->clone()));
         }
-        return new Program(pos_, std_include_, std::move(tmp));
+        return new Program(pos_, std_include_, std::move(tmp), bits_, qubits_);
     }
 };
 

@@ -77,6 +77,45 @@ static const std::string std_include =
     "u3(-theta/2,0,-(phi+lambda)/2) t;  cx c,t;  u3(theta/2,phi,0) t;}\n";
 
 /**
+ * \brief openQASM 2.0 standard library + r and cswap gates, as a string
+ * constant, as defined by Qiskit in
+ * https://github.com/Qiskit/qiskit-terra/tree/master/qiskit/circuit/library/standard_gates
+static const std::string std_include_qiskit =
+    "gate u3(theta,phi,lambda) q { U(theta,phi,lambda) q; }\n"
+    "gate u2(phi,lambda) q { U(pi/2,phi,lambda) q; }\n"
+    "gate u1(lambda) q { U(0,0,lambda) q; }\n"
+    "gate cx c,t { CX c,t; }\n"
+    "gate id a { U(0,0,0) a; }\n"
+    "gate u0(gamma) q { U(0,0,0) q; }\n"
+    "gate x a { u3(pi,0,pi) a; }\n"
+    "gate y a { u3(pi,pi/2,pi/2) a; }\n"
+    "gate z a { u1(pi) a; }\n"
+    "gate h a { u2(0,pi) a; }\n"
+    "gate s a { u1(pi/2) a; }\n"
+    "gate sdg a { u1(-pi/2) a; }\n"
+    "gate t a { u1(pi/4) a; }\n"
+    "gate tdg a { u1(-pi/4) a; }\n"
+    "gate r(theta, phi) a { u3(theta,phi-pi/2,-phi+pi/2) a; }\n"
+    "gate rx(theta) a { r(theta,0) a; } \n"
+    "gate ry(theta) a { r(theta,pi/2) a; }\n"
+    "gate rz(phi) a { u1(phi) a; } \n"
+    "gate cz a,b { h b; cx a,b; h b; }\n"
+    "gate cy a,b { sdg b; cx a,b; s b; }\n"
+    "gate swap a,b { cx a,b; cx b,a; cx a,b; }\n"
+    "gate ch a,b { s b; h b; t b; cx a,b; tdg b; h b; sdg b; }\n"
+    "gate ccx a,b,c { h c; cx b,c; tdg c; cx a,c; t c; cx b,c; tdg c; cx a,c; "
+    "t b; t c; h c; cx a,b; t a; tdg b; cx a,b; }\n"
+    "gate cswap a,b,c { cx c,b; ccx a,b,c; cx c,b; }\n"
+    "gate crz(lambda) a,b { u1(lambda/2) b; cx a,b; u1(-lambda/2) b; cx a,b; "
+    "}\n"
+    "gate cu1(lambda) a,b { u1(lambda/2) a; cx a,b; u1(-lambda/2) b; cx a,b; "
+    "u1(lambda/2) b; }\n"
+    "gate cu3(theta,phi,lambda) c,t { u1((lambda+phi)/2) c; "
+    "u1((lambda-phi)/2) t; cx c,t; u3(-theta/2,0,-(phi+lambda)/2) t; cx c,t; "
+    "u3(theta/2,phi,0) t; }\n";
+ */
+
+/**
  * \class qasm::parser::Preprocessor
  * \brief openQASM preprocessor class
  * \see qasm::parser::Lexer

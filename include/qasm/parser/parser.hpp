@@ -63,6 +63,8 @@ class Parser {
     bool error_ = false;          ///< whether a parse error has occured
     bool supress_errors_ = false; ///< whether to supress errors
     Token current_token_;         ///< current token
+    int bits_ = 0;                ///< number of bits
+    int qubits_ = 0;              ///< number of qubits
 
   public:
     /**
@@ -255,7 +257,7 @@ class Parser {
         }
 
         return ast::Program::create(pos, pp_lexer_.includes_stdlib(),
-                                    std::move(ret));
+                                    std::move(ret), bits_, qubits_);
     }
 
     /**
@@ -289,6 +291,7 @@ class Parser {
         expect_and_consume_token(Token::Kind::r_square);
         consume_until(Token::Kind::semicolon);
 
+        quantum ? qubits_ += size.as_int() : bits_ += size.as_int();
         return ast::RegisterDecl::create(pos, id.as_string(), quantum,
                                          size.as_int());
     }
@@ -1015,6 +1018,20 @@ inline ast::ptr<ast::Program> parse_stdin(std::string name = "") {
     // accross all different forms and sources of source streams
     pp.add_target_stream(
         std::shared_ptr<std::istream>(&std::cin, [](std::istream*) {}), name);
+
+    return parser.parse();
+}
+
+/**
+ * \brief Parse input stream
+ */
+inline ast::ptr<ast::Program> parse_stream(std::istream& stream) {
+    Preprocessor pp;
+    Parser parser(pp);
+
+    // do not manage the stream, use [](std::istream*){} as shared_ptr deleter
+    pp.add_target_stream(
+        std::shared_ptr<std::istream>(&stream, [](std::istream*) {}));
 
     return parser.parse();
 }
