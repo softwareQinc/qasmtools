@@ -8,3 +8,7 @@ cmake ..
 make -j8 unit_tests
 ctest
 ```
+For Qiskit definitions, do
+```bash
+cmake .. -DUSE_QISKIT_SPECS=ON
+```
