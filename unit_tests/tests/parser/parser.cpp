@@ -8,7 +8,6 @@
 
 #include <sstream>
 
-//using namespace staq;
 using namespace qasm;
 
 // Parsing & semantic analysis unit tests
