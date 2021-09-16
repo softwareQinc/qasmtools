@@ -95,6 +95,8 @@ class Visitor {
     virtual void visit(AncillaDecl&) = 0;
     // Program
     virtual void visit(Program&) = 0;
+    // Destructor
+    virtual ~Visitor() = default;
 };
 
 } // namespace ast
