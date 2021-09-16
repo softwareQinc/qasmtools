@@ -42,6 +42,7 @@
 namespace qasm {
 namespace parser {
 
+#ifndef USE_QISKIT_SPECS
 /**
  * \brief openQASM 2.0 standard library (qelib1.inc) as a string constant
  */
@@ -75,12 +76,13 @@ static const std::string std_include =
     "u1(lambda/2) b;}\n"
     "gate cu3(theta,phi,lambda) c,t { u1((lambda-phi)/2) t; cx c,t; "
     "u3(-theta/2,0,-(phi+lambda)/2) t;  cx c,t;  u3(theta/2,phi,0) t;}\n";
-
+#else
 /**
  * \brief openQASM 2.0 standard library + r and cswap gates, as a string
  * constant, as defined by Qiskit in
  * https://github.com/Qiskit/qiskit-terra/tree/master/qiskit/circuit/library/standard_gates
-static const std::string std_include_qiskit =
+ */
+static const std::string std_include =
     "gate u3(theta,phi,lambda) q { U(theta,phi,lambda) q; }\n"
     "gate u2(phi,lambda) q { U(pi/2,phi,lambda) q; }\n"
     "gate u1(lambda) q { U(0,0,lambda) q; }\n"
@@ -113,7 +115,7 @@ static const std::string std_include_qiskit =
     "gate cu3(theta,phi,lambda) c,t { u1((lambda+phi)/2) c; "
     "u1((lambda-phi)/2) t; cx c,t; u3(-theta/2,0,-(phi+lambda)/2) t; cx c,t; "
     "u3(theta/2,phi,0) t; }\n";
- */
+#endif
 
 /**
  * \class qasm::parser::Preprocessor

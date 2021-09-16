@@ -12,5 +12,11 @@ add_library(libqasmparser INTERFACE)
 target_include_directories(libqasmparser INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>)
 
+#### Enable Qiskit Specs
+option(USE_QISKIT_SPECS "Use Qiskit gate specifications instead of OpenQASM standard" OFF)
+if (${USE_QISKIT_SPECS})
+    target_compile_definitions(libqasmparser INTERFACE -DUSE_QISKIT_SPECS)
+endif ()
+
 #### Unit testing
 add_subdirectory(${CMAKE_SOURCE_DIR}/unit_tests/)
