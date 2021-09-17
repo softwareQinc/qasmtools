@@ -1,4 +1,4 @@
 [submodule "unit_tests/lib/googletest"]
 	path = unit_tests/lib/googletest
-	url = git@github.com:softwareQinc/googletest.git
+	url = https://github.com/softwareQinc/qasmtools.git
 	branch = main
