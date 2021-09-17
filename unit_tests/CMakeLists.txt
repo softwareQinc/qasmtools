@@ -25,6 +25,6 @@ foreach (FILE ${TEST_FILES})
 endforeach ()
 
 target_link_libraries(${TARGET_NAME} PUBLIC gmock)
-target_link_libraries(${TARGET_NAME} PUBLIC libqasmparser)
+target_link_libraries(${TARGET_NAME} PUBLIC libqasmtools)
 
 gtest_discover_tests(${TARGET_NAME})
