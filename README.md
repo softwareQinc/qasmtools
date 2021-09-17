@@ -1,5 +1,5 @@
-# openQASM_parser
-To use the code in this repository, add `openQASM_parser/include` as an include directory.
+# qasmtools
+To use the code in this repository, add `qasmtools/include` as an include directory.
 
 ## Qiskit specifications
 In order to use Qiskit specifications instead of the OpenQASM 2.0 standard, add the compile definition `USE_QISKIT_SPECS`.
