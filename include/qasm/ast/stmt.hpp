@@ -32,8 +32,8 @@
 #pragma once
 
 #include "base.hpp"
-#include "var.hpp"
 #include "expr.hpp"
+#include "var.hpp"
 
 #include <functional>
 #include <vector>

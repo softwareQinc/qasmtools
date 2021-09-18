@@ -1,5 +1,5 @@
 #ifndef PATH
-#define PATH ""
+#define PATH "../../"
 #endif
 
 #include "gtest/gtest.h"

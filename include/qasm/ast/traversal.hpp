@@ -31,8 +31,8 @@
 
 #pragma once
 
-#include "visitor.hpp"
 #include "program.hpp"
+#include "visitor.hpp"
 
 namespace qasm {
 namespace ast {

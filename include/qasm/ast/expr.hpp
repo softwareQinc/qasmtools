@@ -31,8 +31,8 @@
 
 #pragma once
 
+#include "../utils/angle.hpp"
 #include "base.hpp"
-#include "qasm/utils/angle.hpp"
 
 #include <cmath>
 

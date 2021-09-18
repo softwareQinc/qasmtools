@@ -62,14 +62,6 @@ class Position {
         : fname_(fname), line_(line), column_(column) {}
 
     /**
-     * \brief Copy constructor
-     *
-     * \param pos Position to be copied
-     */
-    Position(const Position& pos)
-        : fname_(pos.fname_), line_(pos.line_), column_(pos.column_) {}
-
-    /**
      * \brief Extraction operator overload
      *
      * \param os Output stream

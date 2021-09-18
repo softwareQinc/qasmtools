@@ -45,13 +45,13 @@ static const std::set<std::string_view> qelib_defs{
     "cy", "swap", "ch",  "ccx", "crz", "cu1", "cu3"};
 #else
 /**
- * \brief Qiskit definitions include r and cswap gates, see 
+ * \brief Qiskit definitions include r and cswap gates, see
  * qasm/parser/preprocessor.hpp
  */
 static const std::set<std::string_view> qelib_defs{
-    "u3", "u2",   "u1",  "cx",  "id",  "u0",  "x",  "y",  "z",
-    "h",  "s",    "sdg", "t",   "tdg", "r", "rx",  "ry", "rz", "cz",
-    "cy", "swap", "ch",  "ccx", "cswap", "crz", "cu1", "cu3"};
+    "u3", "u2", "u1",   "cx", "id",  "u0",    "x",   "y",   "z",
+    "h",  "s",  "sdg",  "t",  "tdg", "r",     "rx",  "ry",  "rz",
+    "cz", "cy", "swap", "ch", "ccx", "cswap", "crz", "cu1", "cu3"};
 #endif
 
 /**

@@ -33,8 +33,8 @@
 
 #pragma once
 
+#include "../ast/ast.hpp"
 #include "preprocessor.hpp"
-#include "qasm/ast/ast.hpp"
 
 #include <list>
 

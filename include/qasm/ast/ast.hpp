@@ -30,10 +30,10 @@
 
 #pragma once
 
-#include "qasm/ast/visitor.hpp"
-#include "qasm/ast/base.hpp"
-#include "qasm/ast/expr.hpp"
-#include "qasm/ast/stmt.hpp"
-#include "qasm/ast/decl.hpp"
-#include "qasm/ast/program.hpp"
-#include "qasm/ast/semantic.hpp"
+#include "base.hpp"
+#include "decl.hpp"
+#include "expr.hpp"
+#include "program.hpp"
+#include "semantic.hpp"
+#include "stmt.hpp"
+#include "visitor.hpp"

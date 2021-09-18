@@ -4,10 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 enable_testing()
 
-#### Source directory
-add_compile_definitions(PATH="${CMAKE_SOURCE_DIR}" NOMINMAX)
-
-#### headers
+#### Headers
 add_library(libqasmtools INTERFACE)
 target_include_directories(libqasmtools INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>)

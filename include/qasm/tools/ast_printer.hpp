@@ -31,7 +31,7 @@
 
 #pragma once
 
-#include "qasm/ast/ast.hpp"
+#include "../ast/ast.hpp"
 
 namespace qasm {
 namespace tools {

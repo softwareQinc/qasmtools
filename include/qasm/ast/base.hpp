@@ -31,7 +31,7 @@
 
 #pragma once
 
-#include "qasm/parser/position.hpp"
+#include "../parser/position.hpp"
 #include "visitor.hpp"
 
 #include <memory>

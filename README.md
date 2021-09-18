@@ -1,4 +1,7 @@
 # qasmtools
+[![Build status - CircleCI Linux/macOS](https://circleci.com/gh/softwareQinc/qasmtools.svg?style=svg)](https://circleci.com/gh/softwareQinc/qasmtools)
+[![Build status](https://ci.appveyor.com/api/projects/status/yidln2j88dssf4v1?svg=true)](https://ci.appveyor.com/project/vsoftco/qasmtools)
+
 To use the code in this repository, add `qasmtools/include` as an include directory.
 
 ## Qiskit specifications

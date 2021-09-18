@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+
+# vim
+*.swp
+out.tmp
+
+# MSVC 
+.vs/
+/out*
+CMakeSettings.json
+
+# CLion
+.idea/
+build/
+cmake-build*/

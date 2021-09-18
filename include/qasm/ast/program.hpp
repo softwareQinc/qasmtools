@@ -43,8 +43,8 @@ namespace ast {
 class Program : public ASTNode {
     bool std_include_;          ///< whether the program includes qelib1
     std::list<ptr<Stmt>> body_; ///< the body of the program
-    int bits_ = 0;                ///< number of bits
-    int qubits_ = 0;              ///< number of qubits
+    int bits_ = 0;              ///< number of bits
+    int qubits_ = 0;            ///< number of qubits
 
   public:
     /**
@@ -65,8 +65,8 @@ class Program : public ASTNode {
      * \brief Protected heap-allocated construction
      */
     static ptr<Program> create(parser::Position pos, bool std_include,
-                               std::list<ptr<Stmt>>&& body,
-                               int bits, int qubits) {
+                               std::list<ptr<Stmt>>&& body, int bits,
+                               int qubits) {
         return std::make_unique<Program>(pos, std_include, std::move(body),
                                          bits, qubits);
     }
