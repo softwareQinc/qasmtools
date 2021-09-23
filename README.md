@@ -5,7 +5,7 @@
 To use the code in this repository, add `qasmtools/include` as an include directory.
 
 ## Qiskit specifications
-In order to use Qiskit specifications instead of the OpenQASM 2.0 standard, add the compile definition `USE_QISKIT_SPECS`.
+In order to use Qiskit specifications instead of the OpenQASM 2.0 standard, set the compile definition `USE_QISKIT_SPECS=true`.
 
 ## Unit testing
 ```bash

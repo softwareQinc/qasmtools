@@ -12,7 +12,9 @@ target_include_directories(libqasmtools INTERFACE
 #### Enable Qiskit Specs
 option(USE_QISKIT_SPECS "Use Qiskit gate specifications instead of OpenQASM standard" OFF)
 if (${USE_QISKIT_SPECS})
-    target_compile_definitions(libqasmtools INTERFACE -DUSE_QISKIT_SPECS)
+    target_compile_definitions(libqasmtools INTERFACE -DUSE_QISKIT_SPECS=true)
+else ()
+    target_compile_definitions(libqasmtools INTERFACE -DUSE_QISKIT_SPECS=false)
 endif ()
 
 #### Unit testing

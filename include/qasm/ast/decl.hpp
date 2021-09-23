@@ -38,7 +38,7 @@
 namespace qasm {
 namespace ast {
 
-#ifndef USE_QISKIT_SPECS
+#if !USE_QISKIT_SPECS
 static const std::set<std::string_view> qelib_defs{
     "u3", "u2",   "u1",  "cx",  "id",  "u0",  "x",  "y",  "z",
     "h",  "s",    "sdg", "t",   "tdg", "rx",  "ry", "rz", "cz",
