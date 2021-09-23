@@ -27,7 +27,7 @@
  */
 
 /**
- * \file qasm/parser/token.hpp
+ * \file qasmtools/parser/token.hpp
  * \brief Tokens
  */
 
@@ -38,13 +38,13 @@
 #include <unordered_map>
 #include <variant>
 
-namespace qasm {
+namespace qasmtools {
 namespace parser {
 
 /**
- * \class qasm::parser::Token
+ * \class qasmtools::parser::Token
  * \brief openQASM token class
- * \see qasm::parser::Lexer
+ * \see qasmtools::parser::Lexer
  */
 class Token {
   public:
@@ -104,7 +104,7 @@ class Token {
      * \brief Extraction operator overload
      *
      * \param os Output stream passed by reference
-     * \param k qasm::parser::Kind enum class
+     * \param k qasmtools::parser::Kind enum class
      * \return Reference to the output stream
      */
     friend std::ostream& operator<<(std::ostream& os, const Kind& k) {
@@ -386,4 +386,4 @@ static const std::unordered_map<std::string, Token::Kind> keywords{
     {"ancilla", Token::Kind::kw_ancilla}};
 
 } // namespace parser
-} // namespace qasm
+} // namespace qasmtools

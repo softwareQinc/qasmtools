@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/semantic.hpp
+ * \file qasmtools/ast/semantic.hpp
  * \brief Semantic analysis for syntax trees
  */
 
@@ -39,11 +39,11 @@
 #include <set>
 #include <unordered_map>
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 
 /**
- * \class qasm::ast::SemanticError
+ * \class qasmtools::ast::SemanticError
  * \brief Exception class for semantic errors
  */
 class SemanticError : public std::exception {
@@ -54,13 +54,13 @@ class SemanticError : public std::exception {
 };
 
 /**
- * \class qasm::ast::BitType
+ * \class qasmtools::ast::BitType
  * \brief Enum for types of bits
  */
 enum class BitType { Cbit, Qubit };
 
 /**
- * \struct qasm::ast::GateType
+ * \struct qasmtools::ast::GateType
  * \brief Data struct for gate types
  */
 struct GateType {
@@ -69,7 +69,7 @@ struct GateType {
 };
 
 /**
- * \struct qasm::ast::RegisterType
+ * \struct qasmtools::ast::RegisterType
  * \brief Data struct for register types
  */
 struct RegisterType {
@@ -78,7 +78,7 @@ struct RegisterType {
 };
 
 /**
- * \struct qasm::ast::RealType
+ * \struct qasmtools::ast::RealType
  * \brief Empty structure denoting a real type
  */
 struct RealType {};
@@ -92,13 +92,13 @@ struct RealType {};
 using Type = std::variant<BitType, GateType, RegisterType, RealType>;
 
 /**
- * \class qasm::ast::SemanticChecker
+ * \class qasmtools::ast::SemanticChecker
  * \brief Implementation of the semantic analysis compiler phase
- * \see qasm::ast::Visitor
+ * \see qasmtools::ast::Visitor
  *
  * Checks for anything that could cause a run-time error -- notably,
  * type errors, invalid uniform gates, etc. Use the functional
- * interface qasm::ast::check_source instead.
+ * interface qasmtools::ast::check_source instead.
  */
 class SemanticChecker final : public Visitor {
   public:
@@ -476,4 +476,4 @@ inline void check_source(Program& prog) {
 }
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools

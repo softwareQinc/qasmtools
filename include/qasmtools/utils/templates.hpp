@@ -25,13 +25,13 @@
  */
 
 /**
- * \file qasm/utils/templates.hpp
+ * \file qasmtools/utils/templates.hpp
  * \brief Helper templates
  */
 
 #pragma once
 
-namespace qasm {
+namespace qasmtools {
 namespace utils {
 /**
  * \brief Convenience template for variant visitors
@@ -44,4 +44,4 @@ template <class... Ts>
 overloaded(Ts...) -> overloaded<Ts...>;
 
 } // namespace utils
-} // namespace qasm
+} // namespace qasmtools

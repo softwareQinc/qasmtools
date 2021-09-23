@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/decl.hpp
+ * \file qasmtools/ast/decl.hpp
  * \brief openQASM declarations
  */
 
@@ -35,7 +35,7 @@
 
 #include <list>
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 
 #if !USE_QISKIT_SPECS
@@ -46,7 +46,7 @@ static const std::set<std::string_view> qelib_defs{
 #else
 /**
  * \brief Qiskit definitions include r and cswap gates, see
- * qasm/parser/preprocessor.hpp
+ * qasmtools/parser/preprocessor.hpp
  */
 static const std::set<std::string_view> qelib_defs{
     "u3", "u2", "u1",   "cx", "id",  "u0",    "x",   "y",   "z",
@@ -65,7 +65,7 @@ inline bool is_std_qelib(const std::string& id) {
 }
 
 /**
- * \class qasm::ast::Decl
+ * \class qasmtools::ast::Decl
  * \brief Base class for openQASM declarations
  *
  * Declarations are attribute classes as they can occur in different
@@ -89,10 +89,10 @@ class Decl {
 };
 
 /**
- * \class qasm::ast::GateDecl
+ * \class qasmtools::ast::GateDecl
  * \brief Class for gate declarations
- * \see qasm::ast::Stmt
- * \see qasm::ast::Decl
+ * \see qasmtools::ast::Stmt
+ * \see qasmtools::ast::Decl
  */
 class GateDecl final : public Stmt, public Decl {
     bool opaque_;                  ///< whether the declaration is opaque
@@ -219,9 +219,9 @@ class GateDecl final : public Stmt, public Decl {
 };
 
 /**
- * \class qasm::ast::OracleDecl
+ * \class qasmtools::ast::OracleDecl
  * \brief Class for oracle declarations
- * \see qasm::ast::Decl
+ * \see qasmtools::ast::Decl
  */
 class OracleDecl final : public Stmt, public Decl {
     std::vector<symbol> params_; ///< quantum parameters
@@ -277,9 +277,9 @@ class OracleDecl final : public Stmt, public Decl {
 };
 
 /**
- * \class qasm::ast::RegisterDecl
+ * \class qasmtools::ast::RegisterDecl
  * \brief Class for register declarations
- * \see qasm::ast::Decl
+ * \see qasmtools::ast::Decl
  */
 class RegisterDecl final : public Stmt, public Decl {
     bool quantum_; ///< whether the register is quantum
@@ -330,9 +330,9 @@ class RegisterDecl final : public Stmt, public Decl {
 };
 
 /**
- * \class qasm::ast::AncillaDecl
+ * \class qasmtools::ast::AncillaDecl
  * \brief Class for local register declarations
- * \see qasm::ast::Decl
+ * \see qasmtools::ast::Decl
  */
 class AncillaDecl final : public Gate, public Decl {
     bool dirty_; ///< whether the register can be dirty
@@ -385,4 +385,4 @@ class AncillaDecl final : public Gate, public Decl {
 };
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools

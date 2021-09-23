@@ -25,13 +25,13 @@
  */
 
 /**
- * \file qasm/ast/visitor.hpp
+ * \file qasmtools/ast/visitor.hpp
  * \brief Visitor interface for syntax trees
  */
 
 #pragma once
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 
 /* Forward declarations */
@@ -56,7 +56,7 @@ class AncillaDecl;
 class Program;
 
 /**
- * \class qasm::ast::Visitor
+ * \class qasmtools::ast::Visitor
  * \brief Base visitor interface
  *
  * Classic visitor via (virtual) double dispatch. Standard usage is to
@@ -66,7 +66,7 @@ class Program;
  * Traversal to sub-nodes is handled by the particular visitor, not the
  * node class. For a visitor that automatically handles traversal and also
  * allows picking and choosing the particular visit overloads, see
- * qasm::ast::Traverse.
+ * qasmtools::ast::Traverse.
  */
 class Visitor {
   public:
@@ -100,4 +100,4 @@ class Visitor {
 };
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools

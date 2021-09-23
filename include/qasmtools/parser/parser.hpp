@@ -27,7 +27,7 @@
  */
 
 /**
- * \file qasm/parser/parser.hpp
+ * \file qasmtools/parser/parser.hpp
  * \brief openQASM parsing
  */
 
@@ -38,11 +38,11 @@
 
 #include <list>
 
-namespace qasm {
+namespace qasmtools {
 namespace parser {
 
 /**
- * \class qasm::parser::ParseError
+ * \class qasmtools::parser::ParseError
  * \brief Exception class for parse errors
  */
 class ParseError : public std::exception {
@@ -53,9 +53,9 @@ class ParseError : public std::exception {
 };
 
 /**
- * \class qasm::parser::Parser
+ * \class qasmtools::parser::Parser
  * \brief openQASM parser class
- * \see qasm::parser::Preprocessor
+ * \see qasmtools::parser::Preprocessor
  */
 class Parser {
     Preprocessor& pp_lexer_; ///< preprocessed, tokenized input stream
@@ -690,7 +690,7 @@ class Parser {
 
     /**
      * \brief Parse an atomic expression
-     * \see qpp:qasm::Parser::parse_exp()
+     * \see qpp:qasmtools::Parser::parse_exp()
      *
      * \return Unique pointer to an expression object
      */
@@ -765,7 +765,7 @@ class Parser {
 
     /**
      * \brief Parse a binary operator
-     * \see qpp:qasm::Parser::parse_exp()
+     * \see qpp:qasmtools::Parser::parse_exp()
      *
      * \return Binary operator
      */
@@ -802,7 +802,7 @@ class Parser {
 
     /**
      * \brief Parse a unary operator
-     * \see qpp:qasm::Parser::parse_exp()
+     * \see qpp:qasmtools::Parser::parse_exp()
      *
      * \return Unary operator
      */
@@ -1053,4 +1053,4 @@ inline ast::ptr<ast::Program> parse_string(const std::string& str,
 }
 
 } // namespace parser
-} // namespace qasm
+} // namespace qasmtools

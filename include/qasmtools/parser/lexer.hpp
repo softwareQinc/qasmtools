@@ -27,7 +27,7 @@
  */
 
 /**
- * \file qasm/parser/lexer.hpp
+ * \file qasmtools/parser/lexer.hpp
  * \brief Lexical analysis
  */
 
@@ -38,11 +38,11 @@
 #include <cctype>
 #include <memory>
 
-namespace qasm {
+namespace qasmtools {
 namespace parser {
 
 /**
- * \class qasm::parser::Lexer
+ * \class qasmtools::parser::Lexer
  * \brief openPARSER lexer class
  *
  * The Lexer reads from (a shared_ptr to) an istream object given during
@@ -376,4 +376,4 @@ class Lexer {
 };
 
 } // namespace parser
-} // namespace qasm
+} // namespace qasmtools

@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/parser/position.hpp
+ * \file qasmtools/parser/position.hpp
  */
 
 #pragma once
@@ -33,11 +33,11 @@
 #include <iostream>
 #include <string>
 
-namespace qasm {
+namespace qasmtools {
 namespace parser {
 
 /**
- * \class qasm::parser::Position
+ * \class qasmtools::parser::Position
  * \brief Positions in source code
  */
 class Position {
@@ -65,7 +65,7 @@ class Position {
      * \brief Extraction operator overload
      *
      * \param os Output stream
-     * \param pos qasm::parser::Position
+     * \param pos qasmtools::parser::Position
      * \return Reference to the output stream
      */
     friend std::ostream& operator<<(std::ostream& os, const Position& pos) {
@@ -115,4 +115,4 @@ class Position {
 };
 
 } // namespace parser
-} // namespace qasm
+} // namespace qasmtools

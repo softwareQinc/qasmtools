@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/expr.hpp
+ * \file qasmtools/ast/expr.hpp
  * \brief openQASM expressions
  */
 
@@ -36,7 +36,7 @@
 
 #include <cmath>
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 
 /**
@@ -96,7 +96,7 @@ inline std::ostream& operator<<(std::ostream& os, const UnaryOp& uop) {
 }
 
 /**
- * \class qasm::ast::Expr
+ * \class qasmtools::ast::Expr
  * \brief Base class for openQASM expressions
  */
 class Expr : public ASTNode {
@@ -127,9 +127,9 @@ class Expr : public ASTNode {
 };
 
 /**
- * \class qasm::ast::BExpr
+ * \class qasmtools::ast::BExpr
  * \brief Class for binary operator expressions
- * \see qasm::ast::Expr
+ * \see qasmtools::ast::Expr
  */
 class BExpr final : public Expr {
     ptr<Expr> lexp_; ///< the left sub-expression
@@ -237,9 +237,9 @@ class BExpr final : public Expr {
 };
 
 /**
- * \class qasm::ast::UExpr
+ * \class qasmtools::ast::UExpr
  * \brief Class for unary operator expressions
- * \see qasm::ast::Expr
+ * \see qasmtools::ast::Expr
  */
 class UExpr final : public Expr {
     UnaryOp op_;    ///< the unary operator
@@ -330,9 +330,9 @@ class UExpr final : public Expr {
 };
 
 /**
- * \class qasm::ast::PiExpr
+ * \class qasmtools::ast::PiExpr
  * \brief Class for pi constants
- * \see qasm::ast::Expr
+ * \see qasmtools::ast::Expr
  */
 class PiExpr final : public Expr {
 
@@ -363,9 +363,9 @@ class PiExpr final : public Expr {
 };
 
 /**
- * \class qasm::ast::IntExpr
+ * \class qasmtools::ast::IntExpr
  * \brief Class for integer literal expressions
- * \see qasm::ast::Expr
+ * \see qasmtools::ast::Expr
  */
 class IntExpr final : public Expr {
     int value_; ///< the integer value
@@ -407,9 +407,9 @@ class IntExpr final : public Expr {
 };
 
 /**
- * \class qasm::ast::RealExpr
+ * \class qasmtools::ast::RealExpr
  * \brief Class for floating point literal expressions
- * \see qasm::ast::Expr
+ * \see qasmtools::ast::Expr
  */
 class RealExpr final : public Expr {
     double value_; ///< the floating point value
@@ -449,9 +449,9 @@ class RealExpr final : public Expr {
 };
 
 /**
- * \class qasm::ast::VarExpr
+ * \class qasmtools::ast::VarExpr
  * \brief Class for variable expressions
- * \see qasm::ast::Expr
+ * \see qasmtools::ast::Expr
  */
 class VarExpr final : public Expr {
     symbol var_; ///< the identifier
@@ -526,4 +526,4 @@ inline ptr<Expr> angle_to_expr(const utils::Angle& theta) {
 }
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools

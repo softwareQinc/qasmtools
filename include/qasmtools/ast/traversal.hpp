@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/traversal.hpp
+ * \file qasmtools/ast/traversal.hpp
  * \brief Node traversal for syntax trees
  */
 
@@ -34,13 +34,13 @@
 #include "program.hpp"
 #include "visitor.hpp"
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 
 /**
- * \class qasm::ast::Traverse
+ * \class qasmtools::ast::Traverse
  * \brief Generic complete traversal of ASTs
- * \see qasm::ast::Visitor
+ * \see qasmtools::ast::Visitor
  *
  * Implements a generic, pass-through traversal of the entire
  * AST. Standard usage is to derive from this class and override only
@@ -107,4 +107,4 @@ class Traverse : public Visitor {
 };
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools

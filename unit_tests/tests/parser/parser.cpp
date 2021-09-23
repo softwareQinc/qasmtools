@@ -3,12 +3,12 @@
 #endif
 
 #include "gtest/gtest.h"
-#include "qasm/parser/parser.hpp"
-#include "qasm/ast/semantic.hpp"
+#include "qasmtools/parser/parser.hpp"
+#include "qasmtools/ast/semantic.hpp"
 
 #include <sstream>
 
-using namespace qasm;
+using namespace qasmtools;
 
 // Parsing & semantic analysis unit tests
 /******************************************************************************/

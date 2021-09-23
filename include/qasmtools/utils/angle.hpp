@@ -27,7 +27,7 @@
  */
 
 /**
- * \file qasm/utils/angle.hpp
+ * \file qasmtools/utils/angle.hpp
  * \brief Either symbolic or concrete representation of rotation angles
  */
 
@@ -41,7 +41,7 @@
 #include <optional>
 #include <variant>
 
-namespace qasm {
+namespace qasmtools {
 namespace utils {
 
 /**
@@ -265,4 +265,4 @@ constexpr Angle pi(1, 1);
 } // namespace angles
 
 } // namespace utils
-} // namespace qasm
+} // namespace qasmtools

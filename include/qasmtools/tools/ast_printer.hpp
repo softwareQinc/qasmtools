@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/tools/ast_printer.hpp
+ * \file qasmtools/tools/ast_printer.hpp
  * \brief Direct AST printer for debugging
  */
 
@@ -33,7 +33,7 @@
 
 #include "../ast/ast.hpp"
 
-namespace qasm {
+namespace qasmtools {
 namespace tools {
 
 class ASTPrinter final : public ast::Visitor {
@@ -206,4 +206,4 @@ void print_tree(ast::ASTNode& node, std::ostream& os = std::cout) {
 }
 
 } // namespace tools
-} // namespace qasm
+} // namespace qasmtools

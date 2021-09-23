@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/replacer.hpp
+ * \file qasmtools/ast/replacer.hpp
  * \brief Node replacement for syntax trees
  */
 
@@ -34,12 +34,12 @@
 #include "program.hpp"
 #include "visitor.hpp"
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 /**
- * \class qasm::ast::Replacer
+ * \class qasmtools::ast::Replacer
  * \brief Generic complete traversal with post-order node replacement
- * \see qasm::ast::Visitor
+ * \see qasmtools::ast::Visitor
  *
  * The replacer provides a visitor-style interface where the visitor
  * of a node optionally returns a node of the same base type (in the
@@ -324,12 +324,12 @@ class Replacer : public Visitor {
 };
 
 /**
- * \class qasm::ast::GateReplacer
+ * \class qasmtools::ast::GateReplacer
  * \brief Bulk gate replacement
- * \see qasm::ast::Replacer
+ * \see qasmtools::ast::Replacer
  *
  * Implements bulk replacement of gates given by a hash map. Use the
- * functional interface qasm::ast::replace_gates rather than
+ * functional interface qasmtools::ast::replace_gates rather than
  * the class.
  */
 class GateReplacer final : public Replacer {
@@ -382,4 +382,4 @@ replace_gates(ASTNode& node,
 }
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools

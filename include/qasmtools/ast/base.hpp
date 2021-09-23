@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/base.hpp
+ * \file qasmtools/ast/base.hpp
  * \brief openQASM syntax trees
  */
 
@@ -37,7 +37,7 @@
 #include <memory>
 #include <set>
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 
 template <typename T>
@@ -46,7 +46,7 @@ using ptr = std::unique_ptr<T>;
 using symbol = std::string;
 
 /**
- * \class qasm::ast::ASTNode
+ * \class qasmtools::ast::ASTNode
  * \brief Base class for AST nodes
  */
 class ASTNode {
@@ -108,4 +108,4 @@ class ASTNode {
 };
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools

@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/ast.hpp
+ * \file qasmtools/ast/ast.hpp
  */
 
 #pragma once

@@ -27,7 +27,7 @@
  */
 
 /**
- * \file qasm/parser/preprocessor.hpp
+ * \file qasmtools/parser/preprocessor.hpp
  * \brief Manages includes for openQASM parsing
  */
 
@@ -39,7 +39,7 @@
 #include <sstream>
 #include <vector>
 
-namespace qasm {
+namespace qasmtools {
 namespace parser {
 
 #if !USE_QISKIT_SPECS
@@ -118,9 +118,9 @@ static const std::string std_include =
 #endif
 
 /**
- * \class qasm::parser::Preprocessor
+ * \class qasmtools::parser::Preprocessor
  * \brief openQASM preprocessor class
- * \see qasm::parser::Lexer
+ * \see qasmtools::parser::Lexer
  *
  * The preprocessor acts as a wrapper around the lexer, providing a token stream
  * that matches the stream produced by explicitly inserting included code.
@@ -263,4 +263,4 @@ class Preprocessor {
 };
 
 } // namespace parser
-} // namespace qasm
+} // namespace qasmtools

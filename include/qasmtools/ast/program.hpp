@@ -25,7 +25,7 @@
  */
 
 /**
- * \file qasm/ast/program.hpp
+ * \file qasmtools/ast/program.hpp
  * \brief openQASM programs
  */
 
@@ -33,11 +33,11 @@
 
 #include "decl.hpp"
 
-namespace qasm {
+namespace qasmtools {
 namespace ast {
 
 /**
- * \class qasm::ast::Program
+ * \class qasmtools::ast::Program
  * \brief Program class
  */
 class Program : public ASTNode {
@@ -138,4 +138,4 @@ class Program : public ASTNode {
 };
 
 } // namespace ast
-} // namespace qasm
+} // namespace qasmtools
