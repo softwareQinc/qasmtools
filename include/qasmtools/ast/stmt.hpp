@@ -584,13 +584,6 @@ class DeclaredGate final : public Gate {
     VarAccess& qarg(int i) { return q_args_[i]; }
 
     /**
-     * \brief Get the list of classical arguments
-     *
-     * \return Reference to the list of arguments
-     */
-    std::vector<ptr<Expr>>& cargs() { return c_args_; }
-
-    /**
      * \brief Get the list of quantum arguments
      *
      * \return Reference to the list of arguments
