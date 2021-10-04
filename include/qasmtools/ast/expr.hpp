@@ -35,6 +35,7 @@
 #include "base.hpp"
 
 #include <cmath>
+#include <iomanip>
 
 namespace qasmtools {
 namespace ast {
@@ -442,7 +443,8 @@ class RealExpr final : public Expr {
     std::ostream& pretty_print(std::ostream& os, bool ctx) const override {
         (void) ctx;
 
-        os << value_;
+        std::streamsize ss = os.precision();
+        os << std::setprecision(15) << value_ << std::setprecision(ss);
         return os;
     }
     RealExpr* clone() const override { return new RealExpr(pos_, value_); }
