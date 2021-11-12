@@ -4,6 +4,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 enable_testing()
 
+#### qasmtools root directory
+add_compile_definitions(PROJECT_ROOT_DIR="${PROJECT_SOURCE_DIR}")
+
 #### Headers
 add_library(libqasmtools INTERFACE)
 target_include_directories(libqasmtools INTERFACE

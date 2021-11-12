@@ -1,7 +1,3 @@
-#ifndef PATH
-#define PATH "../../"
-#endif
-
 #include "gtest/gtest.h"
 #include "qasmtools/parser/parser.hpp"
 #include "qasmtools/ast/semantic.hpp"
@@ -151,37 +147,56 @@ TEST(Parsing, Repeated_Arguments3) {
 /******************************************************************************/
 TEST(Parsing, Standard_Compliance) {
     // generic circuits
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/adder.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/bigadder.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/inverseqft1.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/inverseqft2.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/ipea_3_pi_8.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/pea_3_pi_8.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/qec.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/qft.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/qpt.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/rb.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/teleport.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/teleportv2.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/generic/W-state.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/adder.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/bigadder.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/inverseqft1.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/inverseqft2.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/ipea_3_pi_8.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/pea_3_pi_8.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/qec.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/qft.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/qpt.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/rb.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/teleport.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/teleportv2.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/generic/W-state.qasm"));
 
     // ibmqx2 circuits
+    EXPECT_NO_THROW(parser::parse_file(
+        PROJECT_ROOT_DIR "/qasm/ibmqx2/011_3_qubit_grover_50_.qasm"));
+    EXPECT_NO_THROW(parser::parse_file(PROJECT_ROOT_DIR
+                                       "/qasm/ibmqx2/Deutsch_Algorithm.qasm"));
     EXPECT_NO_THROW(
-        parser::parse_file(PATH "/qasm/ibmqx2/011_3_qubit_grover_50_.qasm"));
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/ibmqx2/iswap.qasm"));
     EXPECT_NO_THROW(
-        parser::parse_file(PATH "/qasm/ibmqx2/Deutsch_Algorithm.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/ibmqx2/iswap.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/ibmqx2/qe_qft_3.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/ibmqx2/qe_qft_4.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/ibmqx2/qe_qft_5.qasm"));
-    EXPECT_NO_THROW(parser::parse_file(PATH "/qasm/ibmqx2/W3test.qasm"));
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/ibmqx2/qe_qft_3.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/ibmqx2/qe_qft_4.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/ibmqx2/qe_qft_5.qasm"));
+    EXPECT_NO_THROW(
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/ibmqx2/W3test.qasm"));
 
     // invalid circuits
-    EXPECT_THROW(parser::parse_file(PATH "/qasm/invalid/gate_no_found.qasm"),
-                 ast::SemanticError);
     EXPECT_THROW(
-        parser::parse_file(PATH "/qasm/invalid/missing_semicolon.qasm"),
-        parser::ParseError);
+        parser::parse_file(PROJECT_ROOT_DIR "/qasm/invalid/gate_no_found.qasm"),
+        ast::SemanticError);
+    EXPECT_THROW(parser::parse_file(PROJECT_ROOT_DIR
+                                    "/qasm/invalid/missing_semicolon.qasm"),
+                 parser::ParseError);
 }
 /******************************************************************************/
 
