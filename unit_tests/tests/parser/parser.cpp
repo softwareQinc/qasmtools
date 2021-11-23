@@ -66,8 +66,8 @@ TEST(Parsing, Standard_Gates) {
 TEST(Parsing, Namespaces) {
     std::string src = "OPENQASM 2.0;\n"
                       "opaque x y;\n"
-                      "qreg x[1];\n"
-                      "x x;\n";
+                      "qreg q[1];\n"
+                      "x q;\n";
     EXPECT_NO_THROW(parser::parse_string(src, "namespaces.qasm"));
 }
 /******************************************************************************/
