@@ -1,6 +1,6 @@
-#include "gtest/gtest.h"
 #include "qasmtools/parser/parser.hpp"
 #include "qasmtools/ast/semantic.hpp"
+#include "gtest/gtest.h"
 
 #include <sstream>
 

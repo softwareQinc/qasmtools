@@ -1,5 +1,5 @@
+#include "qasmtools/utils/angle.hpp"
 #include "gtest/gtest.h"
-#include <qasmtools/utils/angle.hpp>
 
 using namespace qasmtools::utils;
 
