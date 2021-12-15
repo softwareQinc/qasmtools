@@ -4,7 +4,7 @@ IF %COMPILER%==msvc2019 (
     CALL "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
     mkdir build_qasm
     cd build_qasm
-    cmake .. -DUSE_QISKIT_SPECS=OFF
+    cmake .. -DUSE_OPENQASM2_SPECS=ON
     msbuild -verbosity:minimal -m:8 unit_tests\unit_tests.vcxproj
     cd ..
 )
