@@ -1,8 +1,9 @@
-#include "qasmtools/parser/parser.hpp"
-#include "qasmtools/ast/semantic.hpp"
+#include <sstream>
+
 #include "gtest/gtest.h"
 
-#include <sstream>
+#include "qasmtools/ast/semantic.hpp"
+#include "qasmtools/parser/parser.hpp"
 
 using namespace qasmtools;
 

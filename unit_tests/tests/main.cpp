@@ -1,8 +1,8 @@
 // Unit testing entry point
 
-#include "gtest/gtest.h"
-
 #include <iostream>
+
+#include "gtest/gtest.h"
 
 int main(int argc, char** argv) {
 #if USE_OPENQASM2_SPECS
