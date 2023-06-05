@@ -5,7 +5,7 @@
 To use the code in this repository, add `qasmtools/include` as an include directory.
 
 ## OpenQASM 2.0 standard specifications
-In order to use the OpenQASM 2.0 standard instead of Qiskit specifications, set the compile definition `USE_OPENQASM2_SPECS=ON`.
+In order to use the OpenQASM 2.0 standard instead of Qiskit specifications, set the compile definition `QASMTOOLS_QASM2_SPECS=ON`.
 
 ## Unit testing
 
@@ -16,4 +16,4 @@ ctest --test-dir build
 ```
 
 For unit testing with OpenQASM 2.0 specifications, configure with 
-`cmake -B build -DUSE_OPENQASM2_SPECS=ON`.
+`cmake -B build -DQASMTOOLS_QASM2_SPECS=ON`.

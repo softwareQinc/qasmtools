@@ -14,11 +14,11 @@ target_include_directories(libqasmtools INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>)
 
 #### Enable OpenQASM 2.0 Specs
-option(USE_OPENQASM2_SPECS "Use OpenQASM 2.0 standard instead of Qiskit gate specifications" OFF)
-if (${USE_OPENQASM2_SPECS})
-    target_compile_definitions(libqasmtools INTERFACE -DUSE_OPENQASM2_SPECS=true)
+option(QASMTOOLS_QASM2_SPECS "Use OpenQASM 2.0 standard instead of Qiskit gate specifications" OFF)
+if (${QASMTOOLS_QASM2_SPECS})
+    target_compile_definitions(libqasmtools INTERFACE -DQASMTOOLS_QASM2_SPECS=true)
 else ()
-    target_compile_definitions(libqasmtools INTERFACE -DUSE_OPENQASM2_SPECS=false)
+    target_compile_definitions(libqasmtools INTERFACE -DQASMTOOLS_QASM2_SPECS=false)
 endif ()
 
 #### Unit testing

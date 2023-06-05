@@ -25,12 +25,12 @@ jobs:
           name: Build the unit tests (standard QASM)
           command: |
             mkdir build_qasm && cd build_qasm
-            cmake .. -DUSE_OPENQASM2_SPECS=ON && make -j2 unit_tests
+            cmake .. -DQASMTOOLS_QASM2_SPECS=ON && make -j2 unit_tests
       - run:
           name: Build the unit tests (Qiskit)
           command: |
             mkdir build_qiskit && cd build_qiskit
-            cmake .. -DUSE_OPENQASM2_SPECS=OFF && make -j2 unit_tests
+            cmake .. -DQASMTOOLS_QASM2_SPECS=OFF && make -j2 unit_tests
       - run:
           name: Run the unit tests (standard QASM)
           command: |
@@ -56,12 +56,12 @@ jobs:
           name: Build the unit tests (standard QASM)
           command: |
             mkdir build_qasm && cd build_qasm
-            cmake .. -DUSE_OPENQASM2_SPECS=ON && make -j2 unit_tests
+            cmake .. -DQASMTOOLS_QASM2_SPECS=ON && make -j2 unit_tests
       - run:
           name: Build the unit tests (Qiskit)
           command: |
             mkdir build_qiskit && cd build_qiskit
-            cmake .. -DUSE_OPENQASM2_SPECS=OFF && make -j2 unit_tests
+            cmake .. -DQASMTOOLS_QASM2_SPECS=OFF && make -j2 unit_tests
       - run:
           name: Run the unit tests (standard QASM)
           command: |

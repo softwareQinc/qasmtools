@@ -5,7 +5,7 @@
 #include "gtest/gtest.h"
 
 int main(int argc, char** argv) {
-#if USE_OPENQASM2_SPECS
+#if QASMTOOLS_QASM2_SPECS
     std::cout << "OpenQASM 2.0 specs" << std::endl;
 #else
     std::cout << "Qiskit specs" << std::endl;
