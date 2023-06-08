@@ -12,11 +12,14 @@ the compile definition `QASMTOOLS_QASM2_SPECS=ON`.
 
 ## Unit testing
 
-```bash
+```shell
 cmake -B build 
 cmake --build build --target unit_tests --parallel 8
 ctest --test-dir build
 ```
 
 For unit testing with OpenQASM 2.0 specifications, configure with
-`cmake -B build -DQASMTOOLS_QASM2_SPECS=ON`.
+
+```shell
+cmake -B build -DQASMTOOLS_QASM2_SPECS=ON`.
+```
