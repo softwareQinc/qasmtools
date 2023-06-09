@@ -21,13 +21,13 @@ jobs:
 
       - name: Build the unit tests (standard OpenQASM2)
         run: |
-          cmake -B ${{github.workspace}}/build_qasm -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-          cmake --build build_qasm --target unit_tests
+          cmake -B build_qasm -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+          cmake --build build_qasm --target unit_tests --parallel 4
 
       - name: Build the unit tests (Qiskit)
         run: |
-          cmake -B ${{github.workspace}}/build_qiskit -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-          cmake --build build_qiskit --target unit_tests
+          cmake -B build_qiskit -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+          cmake --build build_qiskit --target unit_tests --parallel 4
 
       - name: Run the unit tests (standard OpenQASM2)
         run: |
