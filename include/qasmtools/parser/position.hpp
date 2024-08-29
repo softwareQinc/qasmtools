@@ -31,7 +31,7 @@
 #ifndef QASMTOOLS_PARSER_POSITION_HPP_
 #define QASMTOOLS_PARSER_POSITION_HPP_
 
-#include <ostream>
+#include <iostream>
 #include <string>
 
 namespace qasmtools {
